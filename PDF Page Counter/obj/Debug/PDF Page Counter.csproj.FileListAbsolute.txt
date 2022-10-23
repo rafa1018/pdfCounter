@@ -1,0 +1,14 @@
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\bin\Debug\PDF Page Counter.exe.config
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\bin\Debug\PDF Page Counter.exe
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\bin\Debug\PDF Page Counter.pdb
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\bin\Debug\itextsharp.dll
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\bin\Debug\itextsharp.xml
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\obj\Debug\PDF Page Counter.csproj.AssemblyReference.cache
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\obj\Debug\PDF_Page_Counter.MainForm.resources
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\obj\Debug\PDF_Page_Counter.Properties.Resources.resources
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\obj\Debug\PDF_Page_Counter.WorkingOverlay.resources
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\obj\Debug\PDF Page Counter.csproj.GenerateResource.cache
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\obj\Debug\PDF Page Counter.csproj.CoreCompileInputs.cache
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\obj\Debug\PDF Page Counter.csproj.CopyComplete
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\obj\Debug\PDF Page Counter.exe
+C:\Users\rafae\Downloads\PDF-Page-Counter\PDF Page Counter\obj\Debug\PDF Page Counter.pdb
