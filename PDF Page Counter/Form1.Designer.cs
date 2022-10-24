@@ -1,4 +1,6 @@
-﻿namespace PDF_Page_Counter
+﻿using System.Windows.Forms;
+
+namespace PDF_Page_Counter
 {
     partial class MainForm
     {
@@ -29,6 +31,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Expediente Numero", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.listView1 = new System.Windows.Forms.ListView();
             this.headerFile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -36,6 +39,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.headerPagescount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.headerFilepath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.headerExpediente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openFileLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,12 +70,18 @@
             this.columnHeader1,
             this.headerPagescount,
             this.headerFilepath,
+            this.headerExpediente,
             this.columnHeader2});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
+            listViewGroup1.Header = "Expediente Numero";
+            listViewGroup1.Name = "expedienteNumero";
+            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
+            listViewGroup1});
+            this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 27);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(805, 425);
+            this.listView1.Size = new System.Drawing.Size(1080, 425);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -104,6 +114,11 @@
             this.headerFilepath.Text = "File Path";
             this.headerFilepath.Width = 200;
             // 
+            // headerExpediente
+            // 
+            this.headerExpediente.Text = "Expediente Numero";
+            this.headerExpediente.Width = 200;
+            // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Errors";
@@ -130,7 +145,7 @@
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Text = "Eliminar";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // label1
@@ -138,7 +153,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(81, 4);
+            this.label1.Location = new System.Drawing.Point(356, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(275, 17);
             this.label1.TabIndex = 4;
@@ -150,7 +165,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
-            this.button2.Text = "Clear List";
+            this.button2.Text = "Limpiar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -187,7 +202,7 @@
             this.toolStripStatusLabel2.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.toolStripStatusLabel2.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(105, 19);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(104, 19);
             this.toolStripStatusLabel2.Text = "Total Page Count:";
             // 
             // toolStripStatusLabel4
@@ -201,8 +216,9 @@
             // toolStripStatusLabel6
             // 
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(546, 19);
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(773, 19);
             this.toolStripStatusLabel6.Spring = true;
+            this.toolStripStatusLabel6.Click += new System.EventHandler(this.toolStripStatusLabel6_Click);
             // 
             // toolStripStatusLabel5
             // 
@@ -211,8 +227,8 @@
             this.toolStripStatusLabel5.IsLink = true;
             this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
             this.toolStripStatusLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(72, 19);
-            this.toolStripStatusLabel5.Text = "Github Page";
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(90, 19);
+            this.toolStripStatusLabel5.Text = "Exportar a excel";
             this.toolStripStatusLabel5.Click += new System.EventHandler(this.toolStripStatusLabel5_Click);
             // 
             // statusStrip1
@@ -228,7 +244,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 455);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(805, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(1080, 24);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
@@ -237,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 479);
+            this.ClientSize = new System.Drawing.Size(1080, 479);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
@@ -245,7 +261,7 @@
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(821, 518);
+            this.MaximumSize = new System.Drawing.Size(1150, 518);
             this.MinimumSize = new System.Drawing.Size(570, 400);
             this.Name = "MainForm";
             this.Text = "PDF Page Counter";
@@ -263,21 +279,22 @@
         private System.Windows.Forms.ColumnHeader headerFilesize;
         private System.Windows.Forms.ColumnHeader headerPagescount;
         private System.Windows.Forms.ColumnHeader headerFilepath;
+        private System.Windows.Forms.ColumnHeader headerExpediente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ToolStripStatusLabel StatusItemsCount;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
-        private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem openFileLocationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private ToolStripStatusLabel StatusItemsCount;
+        private ToolStripStatusLabel toolStripStatusLabel3;
+        private ToolStripStatusLabel toolStripStatusLabel2;
+        private ToolStripStatusLabel toolStripStatusLabel4;
+        private ToolStripStatusLabel toolStripStatusLabel6;
+        private ToolStripStatusLabel toolStripStatusLabel5;
+        private StatusStrip statusStrip1;
     }
 }
 

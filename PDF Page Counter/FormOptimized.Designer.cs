@@ -1,4 +1,6 @@
-﻿namespace PDF_Page_Counter
+using PDF_Page_Counter.Properties;
+
+namespace PDF_Page_Counter
 {
     partial class FormOptimized
     {
@@ -28,12 +30,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOptimized));
             this.listView1 = new System.Windows.Forms.ListView();
             this.headerFile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.headerFilesize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.headerPagescount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.headerFilepath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.headerNumeroExpediente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -43,6 +47,7 @@
             this.lbl_files = new System.Windows.Forms.Label();
             this.lbl_pages = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.linkExportarExcel = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // listView1
@@ -57,13 +62,14 @@
             this.columnHeader1,
             this.headerPagescount,
             this.headerFilepath,
+            this.headerNumeroExpediente,
             this.columnHeader2});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 55);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1165, 578);
+            this.listView1.Size = new System.Drawing.Size(1394, 578);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -93,6 +99,12 @@
             this.headerFilepath.Text = "File Path";
             this.headerFilepath.Width = 494;
             // 
+            // headerNumeroExpediente
+            // 
+            this.headerNumeroExpediente.Tag = "NumeroExpedienteTag";
+            this.headerNumeroExpediente.Text = "Numero Expediente";
+            this.headerNumeroExpediente.Width = 200;
+            // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Errors";
@@ -118,12 +130,13 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 10;
-            this.button2.Text = "Clear List";
+            this.button2.Text = "Limpiar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txt_path
             // 
+            this.txt_path.Enabled = false;
             this.txt_path.Location = new System.Drawing.Point(106, 14);
             this.txt_path.Name = "txt_path";
             this.txt_path.Size = new System.Drawing.Size(586, 20);
@@ -136,7 +149,7 @@
             this.btn_run.Name = "btn_run";
             this.btn_run.Size = new System.Drawing.Size(75, 23);
             this.btn_run.TabIndex = 12;
-            this.btn_run.Text = "Run";
+            this.btn_run.Text = "Buscar directorio";
             this.btn_run.UseVisualStyleBackColor = true;
             this.btn_run.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -176,11 +189,23 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Paginas";
             // 
+            // linkExportarExcel
+            // 
+            this.linkExportarExcel.AutoSize = true;
+            this.linkExportarExcel.Location = new System.Drawing.Point(1046, 637);
+            this.linkExportarExcel.Name = "linkExportarExcel";
+            this.linkExportarExcel.Size = new System.Drawing.Size(92, 13);
+            this.linkExportarExcel.TabIndex = 17;
+            this.linkExportarExcel.TabStop = true;
+            this.linkExportarExcel.Text = "Exportar a EXCEL";
+            this.linkExportarExcel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // FormOptimized
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 660);
+            this.ClientSize = new System.Drawing.Size(1399, 660);
+            this.Controls.Add(this.linkExportarExcel);
             this.Controls.Add(this.lbl_pages);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_files);
@@ -190,8 +215,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.listView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormOptimized";
-            this.Text = "FormOptimized";
+            this.Text = "PDF Counter";
             this.Load += new System.EventHandler(this.FormOptimized_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,5 +241,7 @@
         private System.Windows.Forms.Label lbl_files;
         private System.Windows.Forms.Label lbl_pages;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkExportarExcel;
+        private System.Windows.Forms.ColumnHeader headerNumeroExpediente;
     }
 }
