@@ -80,10 +80,6 @@ namespace PDF_Page_Counter
                 UpdateValues(numberOfPagesTotal, numberOfFiles);
                 UpdateListItems(listitems);
 
-                listView1.Sort();
-
-                // Set the ListViewItemSorter property to a new ListViewItemComparer object.
-                listView1.ListViewItemSorter = new ListViewItemDateTimeComparer(5, SortOrder.Ascending);
 
             }
             catch
